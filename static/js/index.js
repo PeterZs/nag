@@ -129,11 +129,13 @@ $(document).ready(function() {
 		loop: true,
 		infinite: true,
 		autoplay: true,
-		autoplaySpeed: 5000,
+		autoplaySpeed: 10000,
     }
 
 	// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
+    var textureEditCarousel = bulmaCarousel.attach('#texture-edit-carousel', options);
+    var qualCarousel = bulmaCarousel.attach('#qualitative-carousel', options);
+    var qualCarousel = bulmaCarousel.attach('#qualitative-carousel-davis', options);
 	
     bulmaSlider.attach();
     

@@ -12,7 +12,7 @@
     />
     <meta
       name="description"
-      content="We propose Neural Atlas Graphs (NAGs), a hybrid representation where every graph node is a view-dependent neural atlas, facilitating both 2D appearance editing and 3D ordering of scene elements. NAGs achieve state-of-the-art results on Waymo and DAVIS."
+      content="We propose Neural Atlas Graphs (NAGs), a hybrid representation where every graph node is a view-dependent neural atlas, facilitating both 2D texture and 3D appearance editing of scene elements. NAGs achieve state-of-the-art results on Waymo and DAVIS."
     />
     <meta
       name="keywords"
@@ -37,12 +37,15 @@
     />
     <meta
       property="og:description"
-      content="We propose Neural Atlas Graphs (NAGs), a hybrid representation where every graph node is a view-dependent neural atlas, facilitating both 2D appearance editing and 3D ordering of scene elements. NAGs achieve state-of-the-art results on Waymo and DAVIS."
+      content="We propose Neural Atlas Graphs (NAGs), a hybrid representation where every graph node is a view-dependent neural atlas, facilitating both 2D texture and 3D appearance editing of scene elements. NAGs achieve state-of-the-art results on Waymo and DAVIS."
     />
-    <meta property="og:url" content="https://github.com/jp-schneider/nag" />
-    <meta property="og:image" content="https://github.com/jp-schneider/nag" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://jp-schneider.github.io/nag" />
+    <meta
+      property="og:image"
+      content="https://jp-schneider.github.io/nag/static/images/social_preview.png"
+    />
+    <meta property="og:image:width" content="8106" />
+    <meta property="og:image:height" content="2693" />
     <meta
       property="og:image:alt"
       content="Neural Atlas Graphs - Research Preview"
@@ -69,10 +72,7 @@
     <meta name="citation_author" content="Heide, Felix" />
     <meta name="citation_publication_date" content="2025" />
     <meta name="citation_conference_title" content="Arxiv" />
-    <meta
-      name="citation_pdf_url"
-      content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf"
-    />
+    <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2509.16336" />
 
     <!-- Additional SEO -->
     <meta name="theme-color" content="#2563eb" />
@@ -182,7 +182,7 @@
         "@context": "https://schema.org",
         "@type": "ScholarlyArticle",
         "headline": "Neural Atlas Graphs for Dynamic Scene Decomposition and Editing",
-        "description": "We propose Neural Atlas Graphs (NAGs), a hybrid representation where every graph node is a view-dependent neural atlas, facilitating both 2D appearance editing and 3D ordering of scene elements. NAGs achieve state-of-the-art results on Waymo and DAVIS.",
+        "description": "We propose Neural Atlas Graphs (NAGs), a hybrid representation where every graph node is a view-dependent neural atlas, facilitating both 2D texture and 3D appearance editing of scene elements. NAGs achieve state-of-the-art results on Waymo and DAVIS.",
         "author": [
           {
             "@type": "Person",
@@ -238,22 +238,26 @@
           "@type": "Organization",
           "name": "Arxiv"
         },
-        "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-        "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+        "url": "https://jp-schneider.github.io/nag",
+        "image": "https://jp-schneider.github.io/nag/static/images/social_preview.png",
         "keywords": [
           "Neural Atlas Graphs",
           "Dynamic Scene Decomposition",
           "Neural Fields",
           "Scene Graphs",
-          "Creative Editing"
+          "Creative Editing",
+          "Autonomous Driving",
+          "3D Reconstruction",
+          "Video Editing",
+          ""
         ],
-        "abstract": "Learning editable high-resolution scene representations for dynamic scenes is an open problem with applications across the domains from autonomous driving to creative editing -- the most successful approaches today make a trade-off between editability and supporting scene complexity: neural atlases represent dynamic scenes as two deforming image layers, foreground and background, which are editable in 2D, but break down when multiple objects occlude and interact. In contrast, scene graph models make use of annotated data such as masks and bounding boxes from autonomous‑driving datasets to capture complex 3D spatial relationships, but their implicit volumetric node representations are challenging to edit view-consistently. We propose Neural Atlas Graphs (NAGs), a hybrid high-resolution scene representation, where every graph node is a view‑dependent neural atlas, facilitating both 2D appearance editing and 3D ordering and positioning of scene elements. Fit at test‑time, NAGs achieve state‑of‑the‑art quantitative results on the Waymo Open Dataset -- by 5 dB PSNR increase compared to existing methods -- and make environmental editing possible in high resolution and visual quality -- creating counterfactual driving scenarios with new backgrounds and edited vehicle appearance. We find that the method also generalizes beyond driving scenes and compares favorably - by more than 7 dB in PSNR - to recent matting and video editing baselines on the DAVIS video dataset with a diverse set of human and animal-centric scenes.",
+        "abstract": "Learning editable high-resolution scene representations for dynamic scenes is an open problem with applications across the domains from autonomous driving to creative editing - the most successful approaches today make a trade-off between editability and supporting scene complexity: neural atlases represent dynamic scenes as two deforming image layers, foreground and background, which are editable in 2D, but break down when multiple objects occlude and interact. In contrast, scene graph models make use of annotated data such as masks and bounding boxes from autonomous‑driving datasets to capture complex 3D spatial relationships, but their implicit volumetric node representations are challenging to edit view-consistently. We propose Neural Atlas Graphs (NAGs), a hybrid high-resolution scene representation, where every graph node is a view‑dependent neural atlas, facilitating both 2D appearance editing and 3D ordering and positioning of scene elements. Fit at test‑time, NAGs achieve state‑of‑the‑art quantitative results on the Waymo Open Dataset - by 5 dB PSNR increase compared to existing methods - and make environmental editing possible in high resolution and visual quality - creating counterfactual driving scenarios with new backgrounds and edited vehicle appearance. We find that the method also generalizes beyond driving scenes and compares favorably - by more than 7 dB in PSNR - to recent matting and video editing baselines on the DAVIS video dataset with a diverse set of human and animal-centric scenes.",
         "citation": "BIBTEX_CITATION_HERE",
         "isAccessibleForFree": true,
         "license": "https://creativecommons.org/licenses/by/4.0/",
         "mainEntity": {
           "@type": "WebPage",
-          "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+          "@id": "https://jp-schneider.github.io/nag"
         },
         "about": [
           {
@@ -345,10 +349,9 @@
 
                 <div class="column has-text-centered">
                   <div class="publication-links">
-                    <!-- TODO: Update with your arXiv paper ID -->
                     <span class="link-block">
                       <a
-                        href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf"
+                        href="static/pdfs/nag.pdf"
                         target="_blank"
                         class="external-link button is-normal is-rounded is-dark button-shadow"
                       >
@@ -358,8 +361,6 @@
                         <span>Paper</span>
                       </a>
                     </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
                     <span class="link-block">
                       <a
                         href="static/pdfs/nag-supplementary.pdf"
@@ -372,8 +373,6 @@
                         <span>Supplementary</span>
                       </a>
                     </span>
-
-                    <!-- TODO: Replace with your GitHub repository URL -->
                     <span class="link-block">
                       <a
                         href="https://github.com/jp-schneider/nag"
@@ -386,11 +385,9 @@
                         <span>Code</span>
                       </a>
                     </span>
-
-                    <!-- TODO: Update with your arXiv paper ID -->
                     <span class="link-block">
                       <a
-                        href="https://arxiv.org/abs/<ARXIV PAPER ID>"
+                        href="https://arxiv.org/abs/2509.16336"
                         target="_blank"
                         class="external-link button is-normal is-rounded is-dark"
                       >
@@ -413,7 +410,7 @@
         <div class="container is-max-desktop">
           <div class="hero-body">
             <video
-              poster=""
+              poster="static/videos/poster/overview_poster.png"
               id="tree"
               autoplay
               controls
@@ -433,7 +430,7 @@
                 <strong>counterfactual autonomous driving</strong> (texturized
                 background),
                 <strong>quantitative quality comparisons</strong> (vs.
-                OmniRe/EmeNeRF), and robust
+                OmniRe/EmerNeRF), and robust
                 <strong>3D scene manipulation</strong> (decomposition, car
                 manipulation). Crucially, appearance changes are applied via
                 <strong>single-frame texture editing</strong>, maintaining
@@ -524,13 +521,1037 @@
         </div>
       </section>
 
-
       <section class="hero is-small is-light">
         <div class="hero-body">
           <div class="container">
             <h2 class="title is-3 has-text-centered">
               Qualitative Comparisons
             </h2>
+            <div class="container is-max-desktop content is-size-5">
+              <p>
+                We evaluate our NAGs qualitatively against four state-of-the-art
+                baselines. To demonstrate our method's versatility, we utilize
+                two distinct datasets for our comparisons. For automotive scenes
+                with many actors, we use a subset of the Waymo Open Dataset.
+                Here, we compare our approach with
+                <a href="https://ziyc.github.io/omnire/">OmniRe</a>, a recent 3D
+                Gaussian Splatting method, and
+                <a href="https://emernerf.github.io/">EmerNeRF</a>, a Neural
+                Radiance Field method. <br />
+
+                For single-object videos, we evaluate on the DAVIS dataset,
+                where we provide comparisons against
+                <a href="https://omnimatte-rf.github.io/">OmnimatteRF</a> and
+                <a href="https://layered-neural-atlases.github.io/">
+                  Layered Neural Atlases</a
+                >. As the videos below illustrate, our approach is able to
+                capture fine, high-resolution details in both dynamic automotive
+                scenarios and single-object scenes. <br />
+                Our NAG formulation precisely models complex elements such as
+                spinning wheels, pedestrian motion, and reflections, even under
+                rapid movement. The following carousels showcase these
+                qualitative differences, with each video segment representing a
+                single reconstruction from the respective dataset.
+              </p>
+            </div>
+            <h3 class="title is-4 has-text-centered">
+              Automotive Scenes - Waymo Open Dataset
+            </h3>
+            <div id="qualitative-carousel" class="carousel results-carousel">
+              <div class="item video_comparison_s-125 sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-125\poster\s-125_040_00_GT.png"
+                        id="s-125_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-125\s-125_040_00_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-125\poster\s-125_040_01_Reconstruction_Ours.png"
+                        id="s-125_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-125\s-125_040_01_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-125\poster\s-125_040_02_Reconstruction_ORE.png"
+                        id="s-125_video_omnire"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-125\s-125_040_02_Reconstruction_ORE.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">OmniRe</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-125\poster\s-125_040_03_Reconstruction_ERF.png"
+                        id="s-125_video_emernerf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-125\s-125_040_03_Reconstruction_ERF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        EmerNeRF
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item video_comparison_s-141 sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-141\poster\s-141_002_00_GT.png"
+                        id="s-141_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-141\s-141_002_00_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-141\poster\s-141_002_01_Reconstruction_Ours.png"
+                        id="s-141_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-141\s-141_002_01_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-141\poster\s-141_002_02_Reconstruction_ORE.png"
+                        id="s-141_video_omnire"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-141\s-141_002_02_Reconstruction_ORE.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">OmniRe</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-141\poster\s-141_002_03_Reconstruction_ERF.png"
+                        id="s-141_video_emernerf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-141\s-141_002_03_Reconstruction_ERF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        EmerNeRF
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item video_comparison_s-203 sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-203\poster\s-203_003_00_GT.png"
+                        id="s-203_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-203\s-203_003_00_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-203\poster\s-203_003_01_Reconstruction_Ours.png"
+                        id="s-203_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-203\s-203_003_01_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-203\poster\s-203_003_02_Reconstruction_ORE.png"
+                        id="s-203_video_omnire"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-203\s-203_003_02_Reconstruction_ORE.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">OmniRe</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-203\poster\s-203_003_03_Reconstruction_ERF.png"
+                        id="s-203_video_emernerf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-203\s-203_003_03_Reconstruction_ERF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        EmerNeRF
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item video_comparison_s-324 sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-324\poster\s-324_096_00_GT.png"
+                        id="s-324_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-324\s-324_096_00_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-324\poster\s-324_096_01_Reconstruction_Ours.png"
+                        id="s-324_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-324\s-324_096_01_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-324\poster\s-324_096_02_Reconstruction_ORE.png"
+                        id="s-324_video_omnire"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-324\s-324_096_02_Reconstruction_ORE.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">OmniRe</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-324\poster\s-324_096_03_Reconstruction_ERF.png"
+                        id="s-324_video_emernerf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-324\s-324_096_03_Reconstruction_ERF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        EmerNeRF
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item video_comparison_s-344 sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-344\poster\s-344_000_00_GT.png"
+                        id="s-344_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-344\s-344_000_00_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-344\poster\s-344_000_01_Reconstruction_Ours.png"
+                        id="s-344_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-344\s-344_000_01_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-344\poster\s-344_000_02_Reconstruction_ORE.png"
+                        id="s-344_video_omnire"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-344\s-344_000_02_Reconstruction_ORE.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">OmniRe</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-344\poster\s-344_000_03_Reconstruction_ERF.png"
+                        id="s-344_video_emernerf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-344\s-344_000_03_Reconstruction_ERF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        EmerNeRF
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item video_comparison_s-952 sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-952\poster\s-952_000_00_GT.png"
+                        id="s-952_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-952\s-952_000_00_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-952\poster\s-952_000_01_Reconstruction_Ours.png"
+                        id="s-952_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-952\s-952_000_01_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-952\poster\s-952_000_02_Reconstruction_ORE.png"
+                        id="s-952_video_omnire"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-952\s-952_000_02_Reconstruction_ORE.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">OmniRe</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-952\poster\s-952_000_03_Reconstruction_ERF.png"
+                        id="s-952_video_emernerf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-952\s-952_000_03_Reconstruction_ERF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        EmerNeRF
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item video_comparison_s-975 sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-975\poster\s-975_099_00_GT.png"
+                        id="s-975_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-975\s-975_099_00_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-975\poster\s-975_099_01_Reconstruction_Ours.png"
+                        id="s-975_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-975\s-975_099_01_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-975\poster\s-975_099_02_Reconstruction_ORE.png"
+                        id="s-975_video_omnire"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-975\s-975_099_02_Reconstruction_ORE.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">OmniRe</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\s-975\poster\s-975_099_03_Reconstruction_ERF.png"
+                        id="s-975_video_emernerf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\s-975\s-975_099_03_Reconstruction_ERF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        EmerNeRF
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3 class="title is-4 has-text-centered mt-6">
+              Object-centric Scenes - DAVIS Dataset
+            </h3>
+            <div
+              id="qualitative-carousel-davis"
+              class="carousel results-carousel"
+            >
+              <div class="item video_comparison_bear sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\bear\poster\00_bear_GT.png"
+                        id="bear_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\bear\00_bear_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\bear\poster\01_bear_Reconstruction_Ours.png"
+                        id="bear_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\bear\01_bear_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\bear\poster\02_bear_Reconstruction_ORF.png"
+                        id="bear_video_omnimatterf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\bear\02_bear_Reconstruction_ORF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        OmnimatteRF
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\bear\poster\03_bear_Reconstruction_LNA.png"
+                        id="bear_video_layered_neural_atlases"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\bear\03_bear_Reconstruction_LNA.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Layered Neural Atlases
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item video_comparison_blackswan sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\blackswan\poster\00_blackswan_GT.png"
+                        id="blackswan_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\blackswan\00_blackswan_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\blackswan\poster\01_blackswan_Reconstruction_Ours.png"
+                        id="blackswan_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\blackswan\01_blackswan_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\blackswan\poster\02_blackswan_Reconstruction_ORF.png"
+                        id="blackswan_video_omnimatterf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\blackswan\02_blackswan_Reconstruction_ORF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        OmnimatteRF
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\blackswan\poster\03_blackswan_Reconstruction_LNA.png"
+                        id="blackswan_video_layered_neural_atlases"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\blackswan\03_blackswan_Reconstruction_LNA.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Layered Neural Atlases
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item video_comparison_hike sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\hike\poster\00_hike_GT.png"
+                        id="hike_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\hike\00_hike_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\hike\poster\01_hike_Reconstruction_Ours.png"
+                        id="hike_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\hike\01_hike_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\hike\poster\02_hike_Reconstruction_ORF.png"
+                        id="hike_video_omnimatterf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\hike\02_hike_Reconstruction_ORF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        OmnimatteRF
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\hike\poster\03_hike_Reconstruction_LNA.png"
+                        id="hike_video_layered_neural_atlases"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\hike\03_hike_Reconstruction_LNA.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Layered Neural Atlases
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item video_comparison_kite-surf sync-group">
+                <div class="columns is-multiline is-centered">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\kite-surf\poster\00_kite-surf_GT.png"
+                        id="kite-surf_video_ground_truth"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\kite-surf\00_kite-surf_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\kite-surf\poster\01_kite-surf_Reconstruction_Ours.png"
+                        id="kite-surf_video_ours"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\kite-surf\01_kite-surf_Reconstruction_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">Ours</p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\kite-surf\poster\02_kite-surf_Reconstruction_ORF.png"
+                        id="kite-surf_video_omnimatterf"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\kite-surf\02_kite-surf_Reconstruction_ORF.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        OmnimatteRF
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static\videos\visuals\kite-surf\poster\03_kite-surf_Reconstruction_LNA.png"
+                        id="kite-surf_video_layered_neural_atlases"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static\videos\visuals\kite-surf\03_kite-surf_Reconstruction_LNA.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Layered Neural Atlases
+                      </p>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -565,7 +1586,7 @@
               </p>
             </div>
 
-            <div id="results-carousel" class="carousel results-carousel">
+            <div id="texture-edit-carousel" class="carousel results-carousel">
               <div class="item item-video1 sync-group">
                 <div class="columns is-multiline is-centered">
                   <div class="column is-10 has-text-centered">
@@ -706,8 +1727,8 @@
                   </div>
                 </div>
               </div>
-              <div class="item item-video3 sync-group">
-                <div class="columns is-multiline is-centered">
+              <div class="item item-video3">
+                <div class="columns is-multiline is-centered sync-group">
                   <div class="column is-5 has-text-centered">
                     <figure class="image">
                       <video
@@ -753,6 +1774,52 @@
                     </figure>
                   </div>
                 </div>
+                <div class="columns is-multiline is-centered sync-group">
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static/videos/edits/cars/poster/s-125_000_00_GT.png"
+                        id="video_sign_edit_gt"
+                        class="sync-video master-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static/videos/edits/cars/s-125_000_00_GT.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Ground Truth
+                      </p>
+                    </figure>
+                  </div>
+                  <div class="column is-5 has-text-centered">
+                    <figure class="image">
+                      <video
+                        poster="static/videos/edits/cars/poster/s-125_000_Ours.png"
+                        id="video_sign_edit"
+                        class="sync-video"
+                        controls
+                        muted
+                        loop
+                        width="100%"
+                        preload="none"
+                      >
+                        <source
+                          src="static/videos/edits/cars/s-125_000_Ours.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                      <p class="has-text-centered subtitle is-6 mt-2">
+                        Edited Scene
+                      </p>
+                    </figure>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -781,9 +1848,9 @@
               Michael Moeller and
               Felix Heide},
   title     = {Neural Atlas Graphs for Dynamic Scene Decomposition and Editing},
-  journal   = {arXiv preprint arXiv:2501.XXXXX},
+  journal   = {arXiv preprint arXiv:2509.16336},
   year      = {2025},
-  url       = {https://arxiv.org/abs/2501.XXXXX},
+  url       = {http://arxiv.org/abs/2509.16336},
 }</code></pre>
         </div>
       </section>
