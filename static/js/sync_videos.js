@@ -1,3 +1,61 @@
+
+function is_group_ready(group) {
+    return new Promise(resolve => {
+        const groupVideos = group.querySelectorAll('.sync-video');
+        let videosLoaded = 0;
+        const totalVideos = groupVideos.length;
+
+        if (totalVideos === 0) {
+            resolve();
+            return;
+        }
+
+        groupVideos.forEach(video => {
+            if (video.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) { // readyState 4 means `HAVE_ENOUGH_DATA`
+                videosLoaded++;
+            } else {
+                video.addEventListener('canplaythrough', () => {
+                    videosLoaded++;
+                    if (videosLoaded === totalVideos) {
+                        resolve();
+                    }
+                }, { once: true }); // Use {once: true} to prevent re-firing
+                video.load(); // Force the browser to start loading the video
+                video.pause(); // Ensure the video is paused
+            }
+        });
+    });
+};
+
+window.startCarouselAutoplayWhenReady = (carouselInstance) => {
+    // Find the currently active item within the carousel
+    const activeItem = carouselInstance.items.find(item => item.classList.contains('is-active'));
+    if (!activeItem) {
+        return;
+    }
+
+    // Find all video sync groups within this active carousel item
+    const allVideoGroupsInItem = activeItem.querySelectorAll('.sync-group');
+    if (allVideoGroupsInItem.length === 0) {
+        carouselInstance.start();
+        return;
+    }
+
+    // Create a promise for each video group
+    const groupPromises = Array.from(allVideoGroupsInItem).map(group => is_group_ready(group));
+
+    // Wait for all promises to resolve
+    Promise.all(groupPromises)
+        .then(() => {
+            // Once all groups are ready, start the carousel's autoplay
+            console.log("All video groups ready, starting carousel autoplay of carousel: ", carouselInstance.id);
+            carouselInstance.start();
+        })
+        .catch(error => {
+            console.error("An error occurred while loading video groups:", error);
+        });
+};
+
 document.addEventListener('DOMContentLoaded', (event) => {
     // 1. Find all independent synchronization groups
     const syncGroups = document.querySelectorAll('.sync-group');
@@ -48,6 +106,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     };
 
+    var options = {
+		slidesToScroll: 1,
+		slidesToShow: 1,
+		loop: true,
+		infinite: true,
+		autoplay: false,
+		autoplaySpeed: 10000,
+    }
+
+	// Initialize all div with carousel class
+    var textureEditCarousel = bulmaCarousel.attach('#texture-edit-carousel', options)[0];
+    var qualCarousel = bulmaCarousel.attach('#qualitative-carousel', options)[0];
+    var qualCarouselDavis = bulmaCarousel.attach('#qualitative-carousel-davis', options)[0];
+    var qualCarouselDecomp = bulmaCarousel.attach('#qualitative-carousel-decomp', options)[0];
+
+    bulmaSlider.attach();
+
+
     // --- Intersection Observer ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -64,20 +140,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (entry.isIntersecting) {
                 // 2. Schedule play command with a slight delay (e.g., 200ms)
                 // This prevents race conditions during quick scrolling jitter
-                const playTimer = setTimeout(() => {
-                    if (masterVideo.paused) { 
-                        masterVideo.play().catch(e => {
-                            // CATCH and SILENCE the harmless AbortError
-                            if (e.name !== 'AbortError') {
-                                console.error("Video Playback Error:", e);
-                            }
-                        });
-                    }
-                    videoTimers.delete(group); // Clean up map after successful play attempt
-                }, 200); // Wait 200ms before playing
-
-                videoTimers.set(group, playTimer);
-                
+                is_group_ready(group).then(() => {
+                    const playTimer = setTimeout(() => {
+                        if (masterVideo.paused) { 
+                            masterVideo.play().catch(e => {
+                                // CATCH and SILENCE the harmless AbortError
+                                if (e.name !== 'AbortError') {
+                                    console.error("Video Playback Error:", e);
+                                }
+                            });
+                        }
+                        videoTimers.delete(group); // Clean up map after successful play attempt
+                    }, 200); // Wait 200ms before playing
+                    videoTimers.set(group, playTimer);
+                });
             } else {
                 // 3. Pause immediately when scrolling out of view
                 masterVideo.pause();
@@ -93,4 +169,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         setupSyncGroup(group); 
         observer.observe(group);
     });
+
+
 });
