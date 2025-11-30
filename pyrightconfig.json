@@ -1,0 +1,27 @@
+{
+    "include": [
+      "nsf",
+      "scripts",
+      "tests"
+    ],
+
+    "exclude": [
+      "**/node_modules",
+      "**/__pycache__",
+    ],
+
+    "ignore": [
+      "data/**",
+    ],
+    "typeCheckingMode": "off",
+
+    "reportMissingImports": "error",
+    "reportMissingTypeStubs": false,
+
+    "pythonVersion": "3.9",
+    "pythonPlatform": "Linux",
+
+    "executionEnvironments": [
+
+    ]
+  }

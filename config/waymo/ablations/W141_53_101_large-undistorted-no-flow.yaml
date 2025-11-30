@@ -1,0 +1,267 @@
+NAGConfig:
+  __class__: nag.config.nag_config.NAGConfig
+  _old_scene_children_order: false
+  accelerator: gpu
+  accelerator_devices: 1
+  background_camera_distance: 1.5
+  background_plane_kwargs:
+    coarse_to_fine_color: false
+    color_mask_resolution:
+      __class__: DEFAULT
+    color_mask_smoothing: false
+    encoding_flow_config: large
+    encoding_image_config: large
+    encoding_view_dependence_config: large
+    network_flow_config: large
+    network_image_config: large
+    network_view_dependence_config: large
+  background_plane_type: nag.model.view_dependent_background_image_plane_scene_node_3d.ViewDependentBackgroundImagePlaneSceneNode3D
+  background_relative_scale_margin: 0.5
+  boxes_filename_pattern: (?P<index>[0-9]+).json
+  boxes_object_id_mask_mapping_path: "{data_path}/box_id_mapping.json"
+  boxes_path: "{data_path}/boxes"
+  bundle_path: null
+  cache_images: true
+  cache_masks:
+    __class__: DEFAULT
+  camera_rotation_offset_weight: 0.5
+  camera_translation_offset_weight: 0.5
+  checkpoint_path: null
+  checkpoint_tracker_path: null
+  coarse_to_fine_end_epoch: 65
+  coarse_to_fine_start_epoch: 0
+  data_path: "{env:DATA_PATH}/waymo/segment-14133920963894906769"
+  debug: false
+  deprecated_flow: false
+  depths_filename_pattern: (?P<index>[0-9]+).tiff
+  depths_path: "{data_path}/depth"
+  detect_anomaly: false
+  deterministic: false
+  diff_config: null
+  dtype:
+    __class__: torch/dtype
+    value: torch.float32
+  env_file: .env
+  epoch_data_ratio: 1.0
+  experiment_datetime: null
+  experiment_logger: wandb
+  experiment_logger_kwargs: {}
+  fast: false
+  final_diff_plot: false
+  final_evaluation_metrics:
+    - tools.metric.torch.psnr.PSNR
+    - nag.loss.ssim.SSIM
+    - __class__: tuple
+      value:
+        - tools.metric.torch.lpips.LPIPS
+        - net_type: alex
+          normalize: true
+  final_mask_evaluation_metrics:
+    - tools.metric.torch.psnr.PSNR
+    - nag.loss.ssim.SSIM
+  final_modalities_save: false
+  final_per_object_save: false
+  final_plot_resolution_factor: 1
+  final_plot_without_view_dependency: true
+  frame_indices_filter:
+    __class__: slice
+    start: 53
+    step: null
+    stop: 102
+  grad_scaler_kwargs: {}
+  has_background_plane: true
+  has_camera_aberration_plane: false
+  images_filename_pattern: (?P<index>[0-9]+)\.((png)|(jpg)|(jpeg))
+  images_path: "{data_path}/images_undistorted"
+  in_training_checkpoint_interval: null
+  in_training_epoch_plot_interval: 5
+  in_training_epoch_plot_log: true
+  in_training_epoch_plot_log_l1: true
+  in_training_plot_geometry_camera: true
+  in_training_plot_geometry_interval: 5
+  in_training_plot_geometry_object_indices: null
+  in_training_plot_on_first_epoch: true
+  in_training_plot_resolution_factor: 0.25
+  in_training_plot_times: []
+  in_training_save_geometry_interval: 1
+  in_training_save_plots_and_images: true
+  init_max_image_size: 1080
+  initial_diff_plot: false
+  initial_plot: true
+  initial_plot_resolution_factor: 0.25
+  initial_plot_video: false
+  is_background_color_learnable: true
+  is_camera_rotation_learnable: true
+  is_camera_translation_learnable: true
+  is_plane_rotation_learnable: false
+  is_plane_translation_learnable: true
+  is_waymo: false
+  jit_enabled: true
+  learn_resolution_factor: 1
+  log_every_n_steps: 1
+  log_gradient: false
+  loss_kwargs:
+    mask_loss_weight: 0.005
+  loss_type: nag.loss.l1_mask_loss.L1MaskLoss
+  lr: 0.001
+  lr_scheduler: true
+  lr_scheduler_cooldown: 4
+  mask_background_coverage_threshold: 0.9
+  mask_ids_filter_path: "{data_path}/mask_indices_filter.json"
+  mask_indices_filter: null
+  masks_filename_pattern: img_(?P<index>[0-9]+)_ov_(?P<ov_index>[0-9]+).png
+  masks_path: "{data_path}/masks"
+  max_epochs: 80
+  max_image_size: 2040
+  max_total_batch_size: 20000000.0
+  max_total_batch_size_inference: 40000000.0
+  model_type: nag.model.nag_functional_model.NAGFunctionalModel
+  name: W141_53_101_large-undistorted-no-flow
+  new_homography: true
+  normalize_camera: false
+  num_batches: null
+  num_objects: null
+  num_workers: 10
+  object_position_spline_approximation: true
+  object_rigid_control_points: null
+  object_rigid_control_points_ratio: 1.0
+  output_path: runs/{year}-{month:02d}-{day:02d}/{experiment_datetime_string}_{name}
+  pinhole_camera_config: "{data_path}/waymo_pose_config_no_distortion.json"
+  plane_align_corners: true
+  plane_alpha_rescaling: true
+  plane_alpha_weight: 0.1
+  plane_coarse_to_fine_alpha: false
+  plane_coarse_to_fine_color: false
+  plane_color_weight: 0.1
+  plane_encoding_alpha_config: large
+  plane_encoding_flow_config: large
+  plane_encoding_image_config: large
+  plane_flow_control_points: null
+  plane_flow_control_points_ratio: 0.1
+  plane_flow_rescaling: true
+  plane_flow_weight: 0.0
+  plane_init_strategy: nag.strategy.tilted_plane_initialization_strategy.TiltedPlaneInitializationStrategy
+  plane_init_strategy_kwargs:
+    alpha_mask_resolution:
+      __class__: DEFAULT
+    color_mask_resolution:
+      __class__: DEFAULT
+    orientation_smoothing: false
+    plane_position_strategy: nag.strategy.border_condition_plane_position_strategy.BorderConditionPlanePositionStrategy
+    temporal_alpha_consistency: false
+    temporal_color_consistency: false
+    translation_smoothing: false
+  plane_kwargs:
+    encoding_view_dependence_config: large
+    network_view_dependence_config: large
+  plane_names: null
+  plane_network_alpha_config: large
+  plane_network_flow_config: large
+  plane_network_image_config: large
+  plane_normal_rescaling_hook: nag.model.hooks.alpha_chain_scaling_hook
+  plane_normal_rescaling_hook_kwargs: {}
+  plane_position_gradient_rescaling: true
+  plane_position_rescaling_hook: nag.model.hooks.alpha_chain_scaling_hook
+  plane_position_rescaling_hook_kwargs: {}
+  plane_position_sampling: false
+  plane_position_sampling_hook: nag.model.hooks.sample_positions_hook
+  plane_position_sampling_hook_kwargs: {}
+  plane_rgb_rescaling: true
+  plane_rotation_offset_weight: 0.5
+  plane_translation_offset_weight: 0.5
+  plane_type: nag.model.view_dependent_image_plane_scene_node_3d.ViewDependentImagePlaneSceneNode3D
+  plane_view_dependent_control_point_ratio: 0.1
+  project: nag
+  reevaluate_output_path: false
+  relative_plane_margin: 0.8
+  sampler_kwargs:
+    num_batches: 467
+    num_rays: 30000
+    num_timestamps: 20
+  sampler_type: nag.sampling.random_timed_uv_grid_sampler.RandomTimedUVGridSampler
+  save_after_phase_change: false
+  save_video: true
+  seed: 42
+  skip_object_on_missing_box: false
+  synthetic_camera_config: null
+  tinycudann_network_dtype:
+    __class__: torch/dtype
+    value: torch.float32
+  training_phases:
+    - __class__: nag.model.phase.Phase
+      background_color_fadeout:
+        __class__: DEFAULT
+      dataset_kwargs: null
+      is_color_alpha_learnable: false
+      is_flow_learnable: false
+      is_grad_scaler_enabled: false
+      is_lr_scheduler_active: false
+      is_position_gradient_rescaling_enabled: true
+      is_position_learnable: true
+      is_time_dependence_learnable: false
+      is_view_dependence_learnable: false
+      length: 5
+      loss_kwargs: null
+      name: position_only
+      plane_normal_rescaling_hook: nag.model.hooks.alpha_chain_scaling_hook
+      plane_normal_rescaling_hook_kwargs:
+        alpha_chain_scaling: true
+        total_hit_scaling: true
+      plane_position_rescaling_hook: nag.model.hooks.alpha_chain_scaling_hook
+      plane_position_rescaling_hook_kwargs:
+        alpha_chain_scaling: true
+        total_hit_scaling: true
+      start_at: null
+    - __class__: nag.model.phase.Phase
+      background_color_fadeout:
+        __class__: DEFAULT
+      dataset_kwargs: null
+      is_color_alpha_learnable: true
+      is_flow_learnable: false
+      is_grad_scaler_enabled: false
+      is_lr_scheduler_active: false
+      is_position_gradient_rescaling_enabled: true
+      is_position_learnable: true
+      is_time_dependence_learnable: false
+      is_view_dependence_learnable: false
+      length: 15
+      loss_kwargs: null
+      name: position_color
+      plane_normal_rescaling_hook: nag.model.hooks.alpha_chain_scaling_hook
+      plane_normal_rescaling_hook_kwargs:
+        alpha_chain_scaling: false
+        total_hit_scaling: true
+      plane_position_rescaling_hook: nag.model.hooks.alpha_chain_scaling_hook
+      plane_position_rescaling_hook_kwargs:
+        alpha_chain_scaling: false
+        total_hit_scaling: true
+      start_at: null
+    - __class__: nag.model.phase.Phase
+      background_color_fadeout:
+        __class__: DEFAULT
+      dataset_kwargs: null
+      is_color_alpha_learnable: true
+      is_flow_learnable: false
+      is_grad_scaler_enabled: false
+      is_lr_scheduler_active: true
+      is_position_gradient_rescaling_enabled: true
+      is_position_learnable: true
+      is_time_dependence_learnable: false
+      is_view_dependence_learnable: true
+      length: -1
+      loss_kwargs: null
+      name: position_color_flow_view
+      plane_normal_rescaling_hook: nag.model.hooks.alpha_chain_scaling_hook
+      plane_normal_rescaling_hook_kwargs:
+        alpha_chain_scaling: false
+        total_hit_scaling: true
+      plane_position_rescaling_hook: nag.model.hooks.alpha_chain_scaling_hook
+      plane_position_rescaling_hook_kwargs:
+        alpha_chain_scaling: false
+        total_hit_scaling: true
+      start_at: null
+  use_amp: false
+  use_dataset_color_reprojection: true
+  use_distance_quantiles: false
+  use_progress_bar: true
+  used_runner_type: null

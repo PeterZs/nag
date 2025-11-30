@@ -217,3 +217,17 @@ __marimo__/
 .streamlit/secrets.toml
 
 **/temp_html/*
+
+data/*
+!data/readme.md
+lightning_logs/*
+!lightning_logs/readme.md
+outputs/*
+checkpoints/*
+temp/*
+.proto/*
+runs/*
+runs
+.launch/*
+log/*
+!data/static/

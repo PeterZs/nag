@@ -2,19 +2,60 @@
 name = "nag"
 version = "0.1.0"
 description = ""
-authors = [
-    "Jan Philipp Schneider <jp-schneider@users.noreply.github.com>",
-    "Pratik Singh Bisht",
-    "Ilya Chugunov",
-    "Andreas Kolb",
-    "Michael Moeller",
-    "Felix Heide",
-]
+authors = ["Jan Philipp Schneider <jp-schneider@users.noreply.github.com>", "Pratik Singh Bisht", "Ilya Chugunov", "Andreas Kolb", "Michael Moeller", "Felix Heide"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13"
+commentjson = "^0.9.0"
+matplotlib = "^3.8.3"
+natsort = "^8.4.0"
+numpy = "^1.26.4"
+opencv-python = "^4.9.0.80"
+rawpy = "^0.19.1"
+tqdm = "^4.66.2"
+tensorboard = "^2.16.2"
+toml = "^0.10.2"
+jsonpickle = "^3.0.4"
+pyyaml = "^6.0.1"
+pytorch-lightning = {version = "^2.2.3", optional = true}
+scikit-learn = "^1.4.2"
+torchmetrics = {version = "^1.4.0", optional = true}
+torch = {version = "2.4.1+cu124", source = "cuda124", optional = true}
+torchvision = {version = "0.19.1+cu124", source = "cuda124", optional = true}
+torchaudio = {version = "2.4.1+cu124", source = "cuda124", optional = true}
+scikit-image = "^0.24.0"
+roma = {version = "^1.5.0", optional = true}
+lightning = {version = "^2.4.0", optional = true}
+transformers = {version = "^4.45.2", optional = true}
+python-dotenv = "^1.0.1"
+kornia = "^0.8.2"
+tools = {path = "tools", develop = true}
 
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+ipywidgets = "^8.1.2"
+autopep8 = "^2.1.0"
+pre-commit = "^3.7.0"
+mypy = "^1.10.0"
+ipyevents = "^2.0.2"
+ipympl = "^0.9.7"
+mpl-interactions = {extras = ["jupyter"], version = "^0.24.2"}
+
+[tool.poetry.extras]
+depth = ["transformers"]
+torch = ["torch", "torchaudio", "torchvision"]
+post-torch = ["roma", "torchmetrics", "lightning", "pytorch-lightning"]
+
+[[tool.poetry.source]]
+name = "cuda118"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
+
+[[tool.poetry.source]]
+name = "cuda124"
+url = "https://download.pytorch.org/whl/cu124"
+priority = "explicit"
 
 [build-system]
 requires = ["poetry-core"]

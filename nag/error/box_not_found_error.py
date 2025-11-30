@@ -1,0 +1,2 @@
+class BoxNotFoundError(ValueError):
+    pass
