@@ -64,7 +64,7 @@
             </tr>
         </tbody>
     </table>
-    <h5 align="left">Dynamic Scene Editing in Waymo S-203. Ground Truth (top) vs. NAG Edits (bottom) across four frames. The final column shows the texture source (top) and removed object mask (bottom). Note the realistic, consistent blending of the foreground car and its shadow into the edited scene.</h5>
+    <h5 align="left">Dynamic Scene Editing in Waymo S-203. Ground Truth (top) vs. NAG Edits (bottom) across four frames. The final column shows the texture source (bottom) and removed objects (top). Note the realistic, consistent blending of the foreground car and its shadow into the edited scene.</h5>
 </div>
 <br>
 <div style="margin: 0 auto; padding: 0px;">
@@ -90,7 +90,7 @@
             </tr>
         </tbody>
     </table>
-    <h5 align="left"><bold>Seamless Texture Transfer and Propagation. We utilize image generation models to create new textures for the black swan (White and Rainbow variants). The NAG effectively projects these textures (bottom rows) onto the dynamic 3D object, ensuring robust temporal coherence throughout the sequence.</h5>
+    <h5 align="left"><bold>Seamless Texture Transfer and Propagation. We utilize image generation models to create new textures for the black swan (top). The NAG effectively projects textures (white, rainbow) onto the dynamic 3D object, ensuring robust temporal coherence throughout the sequence (bottom rows).</h5>
 </div>
         
 -----    
